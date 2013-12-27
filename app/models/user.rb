@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   protected
 
   def create_user_profile
-    require 'open-uri'
     response = open("http://graph.facebook.com/#{self.access_token}").read
     response = ActiveSupport::JSON.decode(response)
     response.each do |key, value|
