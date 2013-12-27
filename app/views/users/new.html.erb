@@ -1,0 +1,5 @@
+<%= @user.errors.full_messages %>
+<%= form_for @user, :url => users_path, :method => :post do |form| %>
+  <%= form.text_field :access_token, :placeholder => "Your facebook acess token" %>
+  <%= form.submit 'Submit' %>
+<% end -%>
