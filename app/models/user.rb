@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :access_token, :bio, :gender, :hometown, :location, :name, :username
 
-  validates_presence_of :access_token
+  validates :access_token, :presence => true, :uniqueness => true
 
   after_create :create_user_profile
 
